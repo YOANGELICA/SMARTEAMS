@@ -4,6 +4,7 @@
     <RouterView /> -->
     <UserBanner userName="John Smith"/>
     <PageTitle title="Crear un equipo"/>
+    <div style="clear: both;"></div>
     <Create id="create"/>
 </template>
 

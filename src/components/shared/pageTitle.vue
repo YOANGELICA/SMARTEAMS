@@ -20,13 +20,13 @@ export default {
 .title{
     background-color: #ffffff;
     color: #000000;
-    text-align: center;
+    text-align: left;
     padding: 0px 10px;
     font-size: 40px;
     font-weight: 800;
     font-family: Helvetica;
     /* border-radius: 18px; */
-    right:200px;
+    /* right:200px; */
     height: 60px;
     /* width: 700px; */
     /* bottom: 50px */

@@ -1,5 +1,6 @@
 <template>
-    <div class="box">
+  <div class="float-container">
+    <div class="float-child">
         <p>Nombre del proyecto</p>
             <input type="text" id="pname" class="input" placeholder="Escribe aquí..." v-model="proyect_name">
         <p>Inserte los correos electrónicos de los usuarios</p>
@@ -7,7 +8,9 @@
         <p style="font-style: italic"> Ó, Inserte una lista de usuarios (.xlsx)</p>
             <button id="insert" class="btn">Insertar</button> <br/> 
             <!-- esto seria para adjuntar un csv donde esta la info de los usuarios y su perfil de pensamiento asignado -->
-        <p>Fecha límite</p>
+    </div>
+    <div class="float-child">
+            <p>Fecha límite</p>
             <label for="dia" id="day" class="label">Día </label>
         <select id="day" v-model="day" class="date-form">
             <option value="0">01</option>
@@ -68,6 +71,7 @@
         <textarea type="text" id="desc" class="input" placeholder="Escribe aquí..." v-model="proyect_desc"> </textarea> <br/>
        <button id="a" @click="createTeam()" class="btn">¡Listo!</button>
     </div>
+  </div>
 </template>
 
 <script>
@@ -91,7 +95,16 @@ export default {
 </script>
 
 <style scoped>
-.box{
+.float-container {
+    border: 3px solid rgb(255, 255, 255);
+    padding: 20px;
+    width: 1200px;
+}
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    border: none;
     background-color: #ffffff;
     color: #FF5758;
     text-align: left;
@@ -99,11 +112,7 @@ export default {
     font-family: helvetica;
     padding: 1em;
     border-radius: 18px;
-    height: 550px;
-    width: 500px;
-    right: 600px;
-    top: 90px
-}
+}  
 .btn{
   width: 100px;
   background-color: #FF5758;
