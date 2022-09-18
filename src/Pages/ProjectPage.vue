@@ -14,16 +14,16 @@
 </template>
 
 <script>
-import Menu from '../shared/Menu.vue';
-import UserBanner from './shared/UserBanner.vue';
-import PageTitle from '../shared/pageTitle.vue';
-import ProjectDesc from '../project-page.vue';
-import ProgressBar from './proyect-page/Progress-bar.vue';
-import TeamUsers from './proyect-page/Team-users.vue';
-import Task from '../shared/Task.vue';
+import Menu from '@/components/shared/menu.vue';
+import UserBanner from '@/components/shared/UserBanner.vue';
+import PageTitle from '@/components/shared/pageTitle.vue';
+import ProjectDesc from '@/project-page.vue';
+import ProgressBar from '@/proyect-page/Progress-bar.vue';
+import TeamUsers from '@/proyect-page/Team-users.vue';
+import Task from '@/components/shared/Task.vue';
 
 export default{
-    name: 'Create-page',
+    name: 'ProjectPage',
     components: {
     Menu,
     UserBanner,

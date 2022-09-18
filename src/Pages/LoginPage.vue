@@ -1,18 +1,16 @@
 <template>
     <!-- <Menu/> -->
-    <Register id="reg"/>
-    <!-- <router-link to="/Profile"> MI PERFIL </router-link>
-    <RouterView/> -->
+    <Login/>
 </template>
 
 <script>
-import Register from '@/components/register-page/Register.vue';
+import Login from '@/components/login-page/Login.vue';
 import Menu from '@/components/shared/menu.vue';
 
 export default{
     name: 'RegisterPage',
     components: {
-    Register,
+    Login,
     Menu,
     }
 }

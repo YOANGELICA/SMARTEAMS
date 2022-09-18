@@ -1,12 +1,14 @@
 <template>
     <div class="box">
-        <p>Inserte la lista de usuarios</p>
-            <!-- esto seria para adjuntar un csv donde esta la info de los usuarios y su perfil de pensamiento asignado -->
-            <button id="insert" class="btn">Insertar</button> <br/> 
         <p>Nombre del proyecto</p>
-            <input type="text" id="pname" class="input" placeholder="Escribe aquí" v-model="proyect_name">
+            <input type="text" id="pname" class="input" placeholder="Escribe aquí..." v-model="proyect_name">
+        <p>Inserte los correos electrónicos de los usuarios</p>
+            <textarea type="text" id="user-emails" class="input" placeholder="Separados por comas" v-model="proyect_users"> </textarea>
+        <p style="font-style: italic"> Ó, Inserte una lista de usuarios (.xlsx)</p>
+            <button id="insert" class="btn">Insertar</button> <br/> 
+            <!-- esto seria para adjuntar un csv donde esta la info de los usuarios y su perfil de pensamiento asignado -->
         <p>Fecha límite</p>
-            <label for="dia" id="day" class="label">Día</label>
+            <label for="dia" id="day" class="label">Día </label>
         <select id="day" v-model="day" class="date-form">
             <option value="0">01</option>
             <option value="1">02</option>
@@ -40,7 +42,7 @@
             <option value="29">30</option>
             <option value="30">31</option>
        </select>
-       <label for="dia" id="month" class="label">Mes</label>
+       <label for="dia" id="month" class="label"> Mes </label>
        <select id="month" v-model="month" class="date-form">
             <option value="0"> Enero</option>
             <option value="1">Febrero</option>
@@ -55,7 +57,7 @@
             <option value="10">Noviembre</option>
             <option value="11">Diciembre</option>
        </select>
-       <label for="dia" id="year" class="label">Año</label>
+       <label for="dia" id="year" class="label"> Año </label>
        <select id="year" v-model="year" class="date-form">
             <option value="0">2022</option>
             <option value="1">2023</option>
@@ -63,7 +65,7 @@
             <option value="3">2025</option>
        </select>
        <p>Añada una descripción</p>
-        <textarea type="text" id="desc" class="input" placeholder="Escribe aquí" v-model="proyect_desc"> </textarea>
+        <textarea type="text" id="desc" class="input" placeholder="Escribe aquí..." v-model="proyect_desc"> </textarea> <br/>
        <button id="a" @click="createTeam()" class="btn">¡Listo!</button>
     </div>
 </template>
@@ -90,20 +92,20 @@ export default {
 
 <style scoped>
 .box{
-    background-color: #F6F6F6;
+    background-color: #ffffff;
     color: #FF5758;
     text-align: left;
     font-size: 16px;
     font-family: helvetica;
     padding: 1em;
     border-radius: 18px;
-    height: 520px;
-    width: 350px;
-    right: 700px;
+    height: 550px;
+    width: 500px;
+    right: 600px;
     top: 90px
 }
 .btn{
-  width: 30%;
+  width: 100px;
   background-color: #FF5758;
   color: #ffffff;
   padding: 10px 5px;
@@ -117,8 +119,12 @@ export default {
   color: #a6a6a6;
   font-style: italic;
 }
+.label{
+  color: #a6a6a6;
+  font-style: italic;
+}
 .input{
-  width: 70%;
+  width: 300px;
   background-color: #EBE9E9;
   color: #5c5c5c;
   padding: 10px 17px;
@@ -128,17 +134,25 @@ export default {
   cursor: text;
 }
 #desc{
-  width: 100%;
+  width: 350px;
   height: 150px;
   box-sizing: border-box;
   resize: none;
   font-family: helvetica;
-  font-size: 16px;
-
+  font-size: 14px;
+}
+#user-emails{
+  width: 350px;
+  height: 100px;
+  box-sizing: border-box;
+  resize: none;
+  font-family: helvetica;
+  font-size: 14px;
 }
 p{font-weight: 800;}
+
 .date-form{
-  width: 20%;
+  width: 70px;
   background-color: #EBE9E9;
   color: #5c5c5c;
   padding: 5px 5px;
@@ -147,7 +161,5 @@ p{font-weight: 800;}
   border-radius: 24px;
   cursor: pointer;
 }
-#month{
-    width: 30%;
-}
+#month{width: 100px;}
 </style>

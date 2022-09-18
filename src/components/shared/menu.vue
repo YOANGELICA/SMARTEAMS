@@ -7,14 +7,14 @@
             <div>        
                 <img class="img" src="https://img.freepik.com/vector-premium/icono-plano-usuario-anonimo-ilustracion-vector-larga-sombra_520826-1932.jpg"/>
             </div>
-            <h1 class="nopuedeserloveoynolocreo">Porque te tatuatis</h1>
+            <h1 class="user-name">John Smith</h1>
         </div> 
     </div>  
 </template>
 
 <script>
 export default {
-    name: 'Create',
+    name: 'Menu',
     data(){
     }
 }
@@ -61,7 +61,7 @@ export default {
     top: 5px;
     left: 70px
 }
-.nopuedeserloveoynolocreo{
+.user-name{
     color: #ffffff;
     text-align: left;
     padding: 0px 10px;

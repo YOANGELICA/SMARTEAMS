@@ -1,12 +1,13 @@
 <template>
-    <div class="box">
-        <p>Ingrese su nombre completo</p>
+    <div style="text-align: center">
+        <h1 style="font-size: 40px; font-weight: 800; color: #000000"> Regístrate ahora </h1><br/>
+        <p class="p">Ingrese su nombre completo</p>
         <input type="text" v-model="username" class="field"><br/>
-        <p>Ingrese su correo electónico</p>
+        <p class="p">Ingrese su correo electónico</p>
         <input type="text" v-model="email" class="field"><br/>
-        <p>Cree una contraseña</p>
+        <p class="p">Cree una contraseña</p>
         <input type="password" v-model="password" class="field"><br/>
-        <p>Vuelva a ingresar la contraseña</p>
+        <p class="p">Vuelva a ingresar la contraseña</p>
         <input type="password" v-model="password2" class="field"><br/><br/>
         <button @click="createUser()" id="button"> Crear usuario</button>
 <!-- lo ideal seria que esto fuera un formulario que depsues insertara los datos del usuario en una tabla que seria la base de datos de los usuarios-->
@@ -33,7 +34,7 @@ export default {
 </script>
 
 <style scoped>
-.box{
+/* .box{
     background-color: #ffffff;
     color: #FF5758;
     text-align: center;
@@ -45,8 +46,11 @@ export default {
     width: 350px;
     right: 700px;
     top: 100px
-}
-p{font-weight: 800;}
+} */
+.p{
+    font-weight: 800;
+    color: #FF5758;
+    font-size: 20px}
 #button{
     background-color: #FF5758;
     border: none;
