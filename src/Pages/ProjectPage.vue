@@ -1,7 +1,5 @@
 <template>
-    <menu/>
-    <UserBanner userName="John Smith"/>
-    <PageTitle title="Proyecto 1"/>
+    <Menu/>
     <ProjectDesc projectDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
     <ProgressBar/>
     <TeamUsers username="Integrante 1" role="Ideador" />
@@ -15,8 +13,6 @@
 
 <script>
 import Menu from '@/components/shared/menu.vue';
-import UserBanner from '@/components/shared/UserBanner.vue';
-import PageTitle from '@/components/shared/pageTitle.vue';
 import ProjectDesc from '@/project-page.vue';
 import ProgressBar from '@/proyect-page/Progress-bar.vue';
 import TeamUsers from '@/proyect-page/Team-users.vue';
@@ -26,8 +22,6 @@ export default{
     name: 'ProjectPage',
     components: {
     Menu,
-    UserBanner,
-    PageTitle,
     ProjectDesc,
     ProgressBar,
     TeamUsers,

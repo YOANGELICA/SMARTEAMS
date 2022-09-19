@@ -1,7 +1,5 @@
 <template>
     <Menu/>
-    <!-- <UserBanner userName="John Smith"/> -->
-    <PageTitle title="Mi Perfil"/>
     <!-- <UserInfo username="John Smith" email="john.smith@gmail.com"/>
     <UserRole role="Ideador" roleInfo="Un pensador flexible, le gusta expandir sus ideas y ama innovar"/> -->
     <router-link to="/Create"> CREATE </router-link>
@@ -16,9 +14,7 @@
 
 <script>
 import Menu from '@/components/shared/menu.vue';
-import PageTitle from '@/components/shared/pageTitle.vue';
 import UserInfo from '@/profile-page/UserInfo.vue';
-import UserBanner from '@/components/shared/UserBanner.vue';
 import UserRole from '@/profile-page/UserRole.vue';
 import UserProject from '@/profile-page/UserProject.vue';
 import CreateButton from '@/profile-page/CreateButton.vue';
@@ -28,8 +24,6 @@ export default{
     name: 'ProfilePage',
     components: {
     Menu,
-    UserBanner,
-    PageTitle,
     UserInfo,
     UserRole,
     UserProject,

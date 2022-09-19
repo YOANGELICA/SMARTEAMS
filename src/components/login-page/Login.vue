@@ -1,6 +1,6 @@
 <template>
     <div style="text-align: center">
-        <h1 style="font-size: 40px; font-weight: 800; color: #000000"> Iniciar sesión </h1><br/>
+        <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Iniciar sesión </h1><br/>
         <p class="p">Ingrese su correo electónico</p>
         <input type="text" v-model="email" class="field"><br/>
         <p class="p">Ingrese su contraseña</p>

@@ -1,15 +1,15 @@
 <template>
     <!-- <Menu/> -->
-    <PageTitle title="Página no encontrada :("/>
+    <div>
+        <h1 style="font-size: 45px; font-weight: 800; color: #FF5758"> Página no encontrada :( </h1>
+    </div>
 </template>
 
 <script>
-import PageTitle from '@/components/shared/pageTitle.vue';
 import Menu from '@/components/shared/menu.vue';
 export default{
-    name: 'Create-page',
+    name: 'Page404',
     components: {
-    PageTitle,
     Menu
     }
 }

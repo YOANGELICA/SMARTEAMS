@@ -1,4 +1,5 @@
 <template>
+  <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Crear un equipo </h1><br/>
   <div class="float-container">
     <div class="float-child">
         <p>Nombre del proyecto</p>
@@ -80,6 +81,7 @@ export default {
     data(){
       return{
           proyect_name:"",
+          proyect_users:"",
           day:"",
           month: "",
           year: "",
@@ -108,8 +110,7 @@ export default {
     background-color: #ffffff;
     color: #FF5758;
     text-align: left;
-    font-size: 16px;
-    font-family: helvetica;
+    font-size: 18px;
     padding: 1em;
     border-radius: 18px;
 }  
@@ -158,7 +159,9 @@ export default {
   font-family: helvetica;
   font-size: 14px;
 }
-p{font-weight: 800;}
+p{font-weight: 800;
+/* font-size: 20px; */
+}
 
 .date-form{
   width: 70px;
