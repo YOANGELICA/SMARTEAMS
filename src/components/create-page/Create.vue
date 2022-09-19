@@ -6,7 +6,7 @@
             <input type="text" id="pname" class="input" placeholder="Escribe aquí..." v-model="proyect_name">
         <p>Inserte los correos electrónicos de los usuarios</p>
             <textarea type="text" id="user-emails" class="input" placeholder="Separados por comas" v-model="proyect_users"> </textarea>
-        <p style="font-style: italic"> Ó, Inserte una lista de usuarios (.xlsx)</p>
+        <p style="font-style: italic"> Ó, Inserte una lista de usuarios (.csv / .xlsx)</p>
             <button id="insert" class="btn">Insertar</button> <br/> 
             <!-- esto seria para adjuntar un csv donde esta la info de los usuarios y su perfil de pensamiento asignado -->
     </div>
