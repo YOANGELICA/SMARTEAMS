@@ -55,9 +55,9 @@ export default {
     background-color: #FF5758;
     border: none;
     color:  #ffffff;
-    padding: 10px 10px;
+    padding: 10px 20px;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 24px;
     font-weight: 800;
 }

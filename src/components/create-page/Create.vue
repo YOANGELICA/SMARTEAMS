@@ -2,17 +2,17 @@
   <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Crear un equipo </h1><br/>
   <div class="float-container">
     <div class="float-child">
-        <p>Nombre del proyecto</p>
+        <p> Nombre del proyecto </p>
             <input type="text" id="pname" class="input" placeholder="Escribe aquí..." v-model="proyect_name">
-        <p>Inserte los correos electrónicos de los usuarios</p>
+        <p> Inserte los correos electrónicos de los usuarios </p>
             <textarea type="text" id="user-emails" class="input" placeholder="Separados por comas" v-model="proyect_users"> </textarea>
         <p style="font-style: italic"> Ó, Inserte una lista de usuarios (.csv / .xlsx)</p>
-            <button id="insert" class="btn">Insertar</button> <br/> 
+            <button id="insert" class="btn"> Insertar </button> <br/> 
             <!-- esto seria para adjuntar un csv donde esta la info de los usuarios y su perfil de pensamiento asignado -->
     </div>
     <div class="float-child">
             <p>Fecha límite</p>
-            <label for="dia" id="day" class="label">Día </label>
+            <label for="day" class="label"> Día </label>
         <select id="day" v-model="day" class="date-form">
             <option value="0">01</option>
             <option value="1">02</option>
@@ -46,7 +46,7 @@
             <option value="29">30</option>
             <option value="30">31</option>
        </select>
-       <label for="dia" id="month" class="label"> Mes </label>
+       <label for="month" class="label"> Mes </label>
        <select id="month" v-model="month" class="date-form">
             <option value="0"> Enero</option>
             <option value="1">Febrero</option>
@@ -61,7 +61,7 @@
             <option value="10">Noviembre</option>
             <option value="11">Diciembre</option>
        </select>
-       <label for="dia" id="year" class="label"> Año </label>
+       <label for="year" class="label"> Año </label>
        <select id="year" v-model="year" class="date-form">
             <option value="0">2022</option>
             <option value="1">2023</option>
