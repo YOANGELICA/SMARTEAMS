@@ -1,5 +1,7 @@
 <template>
-    <!-- <Menu/> -->
+  <!-- <div class="menu">
+    <Menu/>
+  </div> -->
   <div class="float-container">
     <div class="float-child" style="width: 52%;">
       <h1 style="font-weight: 800; color:#FF5758; font-size:50px"> ¡Bienvenid@ a Smarteams! </h1> <br/>
@@ -10,7 +12,7 @@
       <router-link to="/Login" class="btn"> Iniciar sesión </router-link>
       <RouterView />
     </div>
-    <div class="float-child" id="img" style="align: left; background-color: #FF5758; border-radius: 30px; width: 48%;">
+    <div class="float-child" id="img" style="align-items: center; background-color: #FF5758; border-radius: 30px; width: 48%;">
       <img src="@/assets/homepage-img.jpg" style="height: 400px; width:500px; border-radius: 30px;"/>
     </div>
   </div>
