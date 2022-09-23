@@ -1,5 +1,5 @@
 <template>
-    <div style="text-align: center">
+    <div style="text-align: center; height: 520px; width: 520px;">
         <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Regístrate ahora </h1><br/>
         <p class="p">Ingrese su nombre completo</p>
         <input type="text" v-model="username" class="field"><br/>
@@ -62,7 +62,7 @@ export default {
     font-weight: 800;
 }
 .field{
-  width: 70%;
+  width: 250px;
   background-color: #EBE9E9;
   color: #5c5c5c;
   padding: 10px 17px;

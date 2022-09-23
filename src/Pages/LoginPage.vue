@@ -1,6 +1,9 @@
 <template>
     <!-- <Menu/> -->
-    <Login/>
+    <div style="left: 40%">
+        <Login/>
+    </div>
+
 </template>
 
 <script>

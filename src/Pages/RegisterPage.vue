@@ -1,6 +1,8 @@
 <template>
     <!-- <Menu/> -->
-    <Register id="reg"/>
+    <div style="left: 40%;">
+        <Register id="reg"/>
+    </div>
     <!-- <router-link to="/Profile"> MI PERFIL </router-link>
     <RouterView/> -->
 </template>
