@@ -1,17 +1,23 @@
 <template>
     <!-- <Menu/> -->
+    <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Mi perfil </h1><br/>
     <div class="float-container">
         <div class="float-child">
-            <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Mi perfil </h1><br/>
-            <!-- <UserInfo username="John Smith" email="john.smith@gmail.com"/> -->
+            <UserInfo username="John Smith" email="john.smith@gmail.com"/>
+            <div style="height:20px;"></div>
             <router-link to="/Create" id="create-btn"> + Crear un equipo </router-link>
             <RouterView />
+            <div style="height:40px;"></div>
             <h2> Mis proyectos </h2>
             <!-- <UserProject projectName="Proyecto 1" projectDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
             <UserProject projectName="Proyecto 2" projectDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/> -->
         </div>
         <div class="float-child">
             <!-- <UserRole role="Ideador" roleInfo="Un pensador flexible, le gusta expandir sus ideas y ama innovar"/> -->
+            <!-- <Desarrollador/> -->
+            <Clarificador/>
+            <!-- <Ideador/> -->
+            <!-- <Implementador/> -->
             <h2> Tareas asignadas </h2>
             <!-- <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/>
             <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/>
@@ -24,6 +30,10 @@
 import Menu from '@/components/shared/menu.vue';
 import UserInfo from '@/components/profile-page/UserInfo.vue';
 import UserRole from '@/components/profile-page/UserRole.vue';
+import Desarrollador from '@/components/profile-page/DesarrolladorRole.vue';
+import Clarificador from '@/components/profile-page/ClarificadorRole.vue';
+import Ideador  from '@/components/profile-page/IdeadorRole.vue';
+import Implementador from '@/components/profile-page/ImplementadorRole.vue';
 import UserProject from '@/components/profile-page/UserProject.vue';
 import Task from '@/components/shared/Task.vue';
 
@@ -33,9 +43,13 @@ export default{
     Menu,
     UserInfo,
     UserRole,
+    Desarrollador,
+    Clarificador,
+    Ideador,
+    Implementador,
     UserProject,
     Task
-}
+    }
 }
 </script>
 
@@ -73,8 +87,9 @@ h2{
     border: none;
     border-radius: 24px;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 800;
+    top:20px;
     bottom:20px;
 }
 </style>
