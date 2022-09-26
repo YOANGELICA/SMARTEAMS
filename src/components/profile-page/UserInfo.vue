@@ -4,7 +4,7 @@
             <img src="@/assets/icon-image.png" style="height: 100px; width:100px">
         </div>
         <div class="left-container" style="width: 75%; height: 100%; float:right; ">
-            <h2 style=" font-weight: 750"> {{userName}} Angelica Portocarrero Quintero</h2>
+            <h2 style=" font-weight: 750; font-size: 25px;"> {{userName}} Angelica Portocarrero Quintero</h2>
             <p> {{UserEmail}} angelica.portocarrero12+1@gmail.com</p>
         </div>
     </div>

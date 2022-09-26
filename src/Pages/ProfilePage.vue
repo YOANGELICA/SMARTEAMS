@@ -18,6 +18,7 @@
             <!-- <Clarificador/> -->
             <!-- <Ideador/> -->
             <Implementador/>
+            <div style="height:40px;"></div>
             <h2> Tareas asignadas </h2>
             <!-- <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/>
             <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/>
@@ -76,7 +77,7 @@ export default{
 }  
 h2{
     font-weight: 750;
-    
+    font-size:30px;
 }
 #create-btn{
     width: 100px;
