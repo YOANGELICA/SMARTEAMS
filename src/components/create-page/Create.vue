@@ -70,7 +70,7 @@
        </select>
        <p>Añada una descripción</p>
         <textarea type="text" id="desc" class="input" placeholder="Escribe aquí..." v-model="proyect_desc"> </textarea> <br/>
-       <button id="a" @click="createTeam()" class="btn">¡Listo!</button>
+       <button id="listo-btn" @click="createTeam()" class="btn">¡Listo!</button>
     </div>
   </div>
 </template>
@@ -115,7 +115,7 @@ export default {
     border-radius: 18px;
 }  
 .btn{
-  width: 100px;
+  width: 120px;
   background-color: #FF5758;
   color: #ffffff;
   padding: 10px 5px;
@@ -124,6 +124,7 @@ export default {
   border-radius: 24px;
   cursor: pointer;
   font-weight: 800;
+  font-size: 18px;
 }
 ::placeholder{
   color: #a6a6a6;
@@ -142,6 +143,11 @@ export default {
   border: none;
   border-radius: 24px;
   cursor: text;
+  font-size: 18px;
+}
+#pname{
+  height: 40px;
+  width: 350px;
 }
 #desc{
   width: 350px;
@@ -149,7 +155,7 @@ export default {
   box-sizing: border-box;
   resize: none;
   font-family: helvetica;
-  font-size: 14px;
+  /* font-size: 14px; */
 }
 #user-emails{
   width: 350px;
@@ -157,12 +163,11 @@ export default {
   box-sizing: border-box;
   resize: none;
   font-family: helvetica;
-  font-size: 14px;
+  /* font-size: 14px; */
 }
 p{font-weight: 800;
-/* font-size: 20px; */
+font-size: 21px;
 }
-
 .date-form{
   width: 70px;
   background-color: #EBE9E9;
@@ -174,4 +179,7 @@ p{font-weight: 800;
   cursor: pointer;
 }
 #month{width: 100px;}
+#listo-btn{
+  left: 230px;
+}
 </style>
