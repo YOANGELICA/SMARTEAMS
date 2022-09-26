@@ -2,7 +2,7 @@
     <div class="container">
         <div class="upper-div" style="height:40%">
             <div style="width:20%; float:left; height:64px">
-                <p style="font-style:italic; text-align:left; color: #D0E9FF; "> tu rol es... </p>
+                <p style="font-style:italic; text-align:left; color: #ffffff; "> tu rol es... </p>
             </div>
             <div style="width:80%;float:right;">
                 <h1 style="color:#ffffff; font-weight:800; font-size:40px; opacity:70%;"> Clarificador </h1>
@@ -20,7 +20,7 @@
     .container{
         height: 150px;
         width: 420px;
-        background-color: #5eacf0;
+        background-image: linear-gradient(to right, #88dcf5 , #3b9df4);
         border-radius: 24px;
         padding: 10px 20px;
         text-align: right;

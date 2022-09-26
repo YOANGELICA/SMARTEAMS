@@ -15,9 +15,9 @@
         <div class="float-child">
             <!-- <UserRole role="Ideador" roleInfo="Un pensador flexible, le gusta expandir sus ideas y ama innovar"/> -->
             <!-- <Desarrollador/> -->
-            <Clarificador/>
+            <!-- <Clarificador/> -->
             <!-- <Ideador/> -->
-            <!-- <Implementador/> -->
+            <Implementador/>
             <h2> Tareas asignadas </h2>
             <!-- <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/>
             <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/>
