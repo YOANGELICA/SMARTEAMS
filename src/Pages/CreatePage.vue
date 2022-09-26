@@ -2,6 +2,8 @@
     <!-- <Menu/> -->
     <!-- <router-link to="/Profile"> MI PERFIL </router-link>
     <RouterView /> -->
+    <!-- <nav style="background-color: #FF5758; color:#ffffff"> SMARTEAMS </nav>  -->
+    <!-- navbar provisional ksjnfn -->
     <div style="clear: both;"></div>
     <Create id="create"/>
 </template>

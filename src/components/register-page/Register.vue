@@ -1,5 +1,5 @@
 <template>
-    <div style="text-align: center; height: 520px; width: 520px;">
+    <div style="text-align: center; height: 520px; width: 520px; color: #FF5758;">
         <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Regístrate ahora </h1><br/>
         <p class="p">Ingrese su nombre completo</p>
         <input type="text" v-model="username" class="field"><br/>
@@ -9,7 +9,7 @@
         <input type="password" v-model="password" class="field"><br/>
         <p class="p">Vuelva a ingresar la contraseña</p>
         <input type="password" v-model="password2" class="field"><br/><br/>
-        <button @click="createUser()" id="button"> Crear usuario</button>
+        <button @click="createUser()" class="btn"> Crear usuario</button>
 <!-- lo ideal seria que esto fuera un formulario que depsues insertara los datos del usuario en una tabla que seria la base de datos de los usuarios-->
     </div>
 </template>
@@ -50,16 +50,21 @@ export default {
 .p{
     font-weight: 800;
     color: #FF5758;
-    font-size: 20px}
-#button{
-    background-color: #FF5758;
-    border: none;
-    color:  #ffffff;
-    padding: 10px 20px;
-    display: inline-block;
-    font-size: 18px;
-    border-radius: 24px;
-    font-weight: 800;
+    font-size: 20px
+}
+.btn{
+  width: 200px;
+  background-color: #FF5758;
+  color: #ffffff;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-weight: 750;
+  font-size: 18px;
+  text-align:center;
+  display: inline-block;
 }
 .field{
   width: 250px;

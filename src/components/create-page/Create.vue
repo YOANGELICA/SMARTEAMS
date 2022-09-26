@@ -118,13 +118,14 @@ export default {
   width: 120px;
   background-color: #FF5758;
   color: #ffffff;
-  padding: 10px 5px;
+  padding: 10px 20px;
   margin: 10px 0;
   border: none;
   border-radius: 24px;
   cursor: pointer;
-  font-weight: 800;
+  font-weight: 750;
   font-size: 18px;
+  text-align:center;
 }
 ::placeholder{
   color: #a6a6a6;

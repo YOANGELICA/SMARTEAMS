@@ -1,11 +1,11 @@
 <template>
-    <div style="text-align: center">
+    <div style="text-align: center; color: #FF5758;">
         <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Iniciar sesión </h1><br/>
         <p class="p">Ingrese su correo electónico</p>
         <input type="text" v-model="email" class="field"><br/>
         <p class="p">Ingrese su contraseña</p>
         <input type="password" v-model="password" class="field"><br/>
-        <button @click="login()" id="button"> Acceder </button>
+        <button @click="login()" class="btn"> Acceder </button>
     </div>
 </template>
 
@@ -31,20 +31,21 @@ export default {
 <style scoped>
 .p{
     font-weight: 800;
-    color: #FF5758;
-    font-size: 20px}
-#button{
-    width: 200px;
-    background-color: #FF5758;
-    border: none;
-    color:  #ffffff;
-    padding: 10px 10px;
-    display: inline-block;
-    font-size: 18px;
-    border-radius: 24px;
-    font-weight: 800;
-    top: 10px;
-    cursor: pointer;
+    font-size: 20px
+}
+.btn{
+  width: 200px;
+  background-color: #FF5758;
+  color: #ffffff;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-weight: 750;
+  font-size: 18px;
+  text-align:center;
+  display: inline-block;
 }
 .field{
   width: 250px;
