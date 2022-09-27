@@ -4,20 +4,29 @@
             <img src="@/assets/icon-image.png" style="height: 100px; width:100px">
         </div>
         <div class="left-container" style="width: 75%; height: 100%; float:right; ">
-            <h2 style=" font-weight: 750; font-size: 25px;"> {{userName}} Angelica Portocarrero Quintero</h2>
-            <p> {{UserEmail}} angelica.portocarrero12+1@gmail.com</p>
+            <h2 style=" font-weight: 750; font-size: 25px;"> {{username}}</h2>
+            <p> {{useremail}}</p>
         </div>
     </div>
 </template>
 
-<script></script>
+<script>
+    export default {
+        props: {
+            "username": String,
+            "useremail": String
+        },
+        name: 'UserInfo',
+    }
+</script>
 
 <style scoped>
     .main-container {
         height: 150px;
         width: 470px;
-        background-color: #EBE9E9;
+        background-color: #f1f1f1;
         border-radius: 24px;
         padding: 20px;
+        box-shadow: 10px 10px 10px #e3e3e3;
     }
 </style>

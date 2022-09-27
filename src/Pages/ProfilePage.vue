@@ -3,17 +3,16 @@
     <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Mi perfil </h1><br/>
     <div class="float-container">
         <div class="float-child">
-            <UserInfo username="John Smith" email="john.smith@gmail.com"/>
+            <UserInfo  username="Angelica Portocarrero Quintero" useremail="angelica.portocarrero12+1@gmail.com"/>
             <div style="height:20px;"></div>
             <router-link to="/Create" id="create-btn"> + Crear un equipo </router-link>
             <RouterView />
             <div style="height:40px;"></div>
             <h2> Mis proyectos </h2>
-            <!-- <UserProject projectName="Proyecto 1" projectDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
-            <UserProject projectName="Proyecto 2" projectDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/> -->
+            <!-- <UserProject projectName="Proyecto 1" projectDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/> -->
+            <UserProject projectname="Proyecto 1"/>
         </div>
         <div class="float-child">
-            <!-- <UserRole role="Ideador" roleInfo="Un pensador flexible, le gusta expandir sus ideas y ama innovar"/> -->
             <!-- <Desarrollador/> -->
             <!-- <Clarificador/> -->
             <!-- <Ideador/> -->
