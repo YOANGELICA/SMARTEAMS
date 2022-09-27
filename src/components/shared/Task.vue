@@ -1,14 +1,12 @@
 <template>
     <div class="main-container" >
-        <div class="right-container" style="width: 10%; height: 100%;float:left; ">
-            <img src="@/assets/icon-image.png" style="height: 30px; width:30px">
-            <!-- esto tendría que ser un boton de seleccionar sdfbjkdfnkas -->
-        </div>
-        <div class="left-container" style="width: 90%; height: 100%; float:right; ">
+        <input class="form-check-input" type="checkbox" value="" id="task">
+        <label class="form-check-label" for="task">
             <h2 style=" font-weight: 750; font-size: 25px;"> {{TaskName}} </h2>
-            <p> {{taskUser}} <br/> fecha límite: {{deadline}} </p>
-        </div>
+            <p> fecha límite: {{deadline}} <br/>  {{taskUser}} </p>
+        </label>
     </div>
+    
 </template>
 
 <script>

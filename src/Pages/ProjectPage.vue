@@ -12,11 +12,14 @@
             <TeamUsers username="Integrante 3" role="Desarrollador"/>  
         </div>
         <div class="float-child">
+            <h2> Progreso </h2>
             <ProgressBar/>
             <h2> Tareas asignadas </h2>
             <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 1" deadline="dd-mm-yy"/><br/>
             <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 2" deadline="dd-mm-yy" /><br/>
-            <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 3" deadline="dd-mm-yy" />
+            <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 3" deadline="dd-mm-yy" /> <br/>
+            <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 2" deadline="dd-mm-yy" /><br/>
+
         </div>
     </div>
     

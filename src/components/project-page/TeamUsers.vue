@@ -4,7 +4,8 @@
             <img src="@/assets/icon-image.png" style="height: 70px; width:70px">
         </div>
         <div class="left-container" style="width: 75%; height: 100%; float:right; ">
-            <h2 style=" font-weight: 750; font-size: 25px;"> {{username}}</h2>
+            <!-- <h2 style=" font-weight: 750; font-size: 25px;"> {{username}}</h2> -->
+            <router-link to="/Profile" style=" font-weight: 750; font-size: 25px; color:black;"> {{username}} </router-link>
             <p> {{role}}</p>
         </div>
     </div>

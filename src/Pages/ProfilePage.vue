@@ -11,17 +11,18 @@
             <h2> Mis proyectos </h2>
             <!-- <UserProject projectName="Proyecto 1" projectDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/> -->
             <UserProject projectname="Proyecto 1"/>
+            <UserProject projectname="Proyecto 2"/>
         </div>
-        <div class="float-child">
+        <div class="float-child" >
             <!-- <Desarrollador/> -->
             <!-- <Clarificador/> -->
             <!-- <Ideador/> -->
             <Implementador/>
             <div style="height:40px;"></div>
-            <h2> Tareas asignadas </h2>
-            <!-- <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/>
-            <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/>
-            <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/> -->
+            <h2> Mis tareas asignadas </h2>
+            <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/><br/> 
+            <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/><br/> 
+            <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/><br/> 
         </div>
     </div>
 </template>
@@ -29,11 +30,12 @@
 <script>
 import Menu from '@/components/shared/menu.vue';
 import UserInfo from '@/components/profile-page/UserInfo.vue';
-import UserRole from '@/components/profile-page/UserRole.vue';
+// import UserRole from '@/components/profile-page/UserRole.vue';
 import Desarrollador from '@/components/profile-page/DesarrolladorRole.vue';
 import Clarificador from '@/components/profile-page/ClarificadorRole.vue';
 import Ideador  from '@/components/profile-page/IdeadorRole.vue';
 import Implementador from '@/components/profile-page/ImplementadorRole.vue';
+
 import UserProject from '@/components/profile-page/UserProject.vue';
 import Task from '@/components/shared/Task.vue';
 
@@ -42,7 +44,7 @@ export default{
     components: {
     Menu,
     UserInfo,
-    UserRole,
+    // UserRole,
     Desarrollador,
     Clarificador,
     Ideador,
@@ -68,11 +70,9 @@ export default{
     /* border:none; */
     background-color: #ffffff;
     color: #000000;
-    text-align: left;
     font-size: 18px;
     padding: 1em;
     min-height: 500px;
-
 }  
 h2{
     font-weight: 750;

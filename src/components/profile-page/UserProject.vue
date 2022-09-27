@@ -24,9 +24,9 @@
     .main-container {
         height: 140px;
         width: 470px;
-        background-color: #f8f8f8;
+        background-color: #ffffff;
         border-radius: 24px;
         padding: 20px;
-        box-shadow: 10px 10px 10px #e3e3e3;
+        /* box-shadow: 10px 10px 10px #e3e3e3; */
     }
 </style>
