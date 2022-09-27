@@ -1,22 +1,21 @@
 <template>
     <!-- <Menu/> -->
-
+    <!-- <router-link to="/Profile"> MI PERFIL </router-link>
+    <RouterView /> -->
     <!-- <nav style="background-color: #FF5758; color:#ffffff"> SMARTEAMS </nav>  -->
     <!-- navbar provisional ksjnfn -->
-
-    <!-- <div style="clear: both;"></div> -->
-    <Create id="create"/>
+    <Task/>
 </template>
 
 <script>
-import Create from '@/components/create-page/Create.vue';
 import Menu from '@/components/shared/menu.vue';
+import Task from '@/components/task-page/Task.vue';
 
 export default{
     name: 'CreatePage',
     components: {
-    Create,
     Menu,
+    Task
     }
 }
 </script>

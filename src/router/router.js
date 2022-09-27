@@ -20,6 +20,8 @@ const routes = [
     component: () => import('@/Pages/CreatePage.vue')},
     {path: '/Project',
     component: () => import('@/Pages/ProjectPage.vue')},
+    {path: '/AddTask',
+    component: () => import('@/Pages/TaskPage.vue')},
     {path: '/:pathMatch(.*)*',
     component: () => import('@/Pages/Page404.vue')}
 ]
