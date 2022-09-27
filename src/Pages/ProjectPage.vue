@@ -1,21 +1,33 @@
 <template>
-    <Menu/>
-    <ProjectDesc projectDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
-    <ProgressBar/>
-    <TeamUsers username="Integrante 1" role="Ideador" />
-    <TeamUsers username="Integrante 1" role="Ideador" />
-    <TeamUsers username="Integrante 1" role="Ideador" />
-    <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy" taskUser="Integrante 1"/>
-    <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy" taskUser="Integrante 1"/>
-    <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy" taskUser="Integrante 1"/>
+    <!-- <Menu/> -->
+    <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Proyecto 1 </h1> <br/>
+    <div class="float-container">
+        <div class="float-child">
+            <h2> Descripción </h2>
+            <ProjectDesc desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
+            <br/>
+            <h2> Integrantes </h2>
+            <TeamUsers username="Integrante 1" role="Ideador"/> 
+            <TeamUsers username="Integrante 2" role="Clarificador"/> 
+            <TeamUsers username="Integrante 3" role="Desarrollador"/>  
+        </div>
+        <div class="float-child">
+            <ProgressBar/>
+            <h2> Tareas asignadas </h2>
+            <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 1" deadline="dd-mm-yy"/><br/>
+            <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 2" deadline="dd-mm-yy" /><br/>
+            <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 3" deadline="dd-mm-yy" />
+        </div>
+    </div>
+    
 
 </template>
 
 <script>
 import Menu from '@/components/shared/menu.vue';
-import ProjectDesc from '@/project-page.vue';
-import ProgressBar from '@/proyect-page/Progress-bar.vue';
-import TeamUsers from '@/proyect-page/Team-users.vue';
+import ProjectDesc from '@/components/project-page/ProjectDesc.vue';
+import ProgressBar from '@/components/project-page/ProgressBar.vue';
+import TeamUsers from '@/components/project-page/TeamUsers.vue';
 import Task from '@/components/shared/Task.vue';
 
 export default{
@@ -31,4 +43,25 @@ export default{
 </script>
 
 <style scoped>
+    .float-container {
+    border: 3px solid rgb(255, 255, 255);
+    padding: 20px;
+    width: 1200px;
+}
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    border: none;
+    background-color: #ffffff;
+    color: #FF5758;
+    text-align: left;
+    font-size: 18px;
+    padding: 1em;
+    border-radius: 18px;
+}
+h2{
+    font-weight: 800;
+    font-size: 28px;
+}
 </style>

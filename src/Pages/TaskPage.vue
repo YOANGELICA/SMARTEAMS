@@ -9,10 +9,10 @@
 
 <script>
 import Menu from '@/components/shared/menu.vue';
-import Task from '@/components/task-page/Task.vue';
+import Task from '@/components/task-page/CreateTask.vue';
 
 export default{
-    name: 'CreatePage',
+    name: 'TaskPage',
     components: {
     Menu,
     Task
