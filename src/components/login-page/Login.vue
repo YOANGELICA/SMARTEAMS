@@ -5,7 +5,8 @@
         <input type="text" v-model="email" class="field"><br/>
         <p class="p">Ingrese su contraseña</p>
         <input type="password" v-model="password" class="field"><br/>
-        <button @click="login()" class="btn"> Acceder </button>
+        <router-link to="/Profile" @click="login()" class="btn"> Acceder </router-link>
+        <RouterView />
     </div>
 </template>
 

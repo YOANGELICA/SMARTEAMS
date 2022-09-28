@@ -51,7 +51,7 @@ export default{
     Implementador,
     UserProject,
     Task
-    }
+    },
 }
 </script>
 

@@ -14,15 +14,16 @@
         <div class="float-child">
             <h2> Progreso </h2>
             <ProgressBar/>
+            <router-link to="/AddTask" id="add-btn"> + Añadir una tarea </router-link><br/>
+            <div style="height:40px;"></div>
             <h2> Tareas asignadas </h2>
             <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 1" deadline="dd-mm-yy"/><br/>
             <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 2" deadline="dd-mm-yy" /><br/>
             <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 3" deadline="dd-mm-yy" /> <br/>
             <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 2" deadline="dd-mm-yy" /><br/>
-
         </div>
     </div>
-    
+    <RouterView/>
 
 </template>
 
@@ -66,5 +67,19 @@ export default{
 h2{
     font-weight: 800;
     font-size: 28px;
+}
+#add-btn{
+    /* width: 89px; */
+    background-color: #FF5758;
+    color: #ffffff;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 800;
+    top:20px;
+    bottom:20px;
 }
 </style>

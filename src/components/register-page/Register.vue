@@ -22,8 +22,8 @@
             <option value="2">Desarrollador</option>
             <option value="3">Implementador</option>
        </select><br/>
-
-        <button @click="createUser()" class="btn"> Crear usuario </button>
+       <router-link to="/Login" @click="createUser()" class="btn" > Crear usuario </router-link>
+        <RouterView />
 <!-- lo ideal seria que esto fuera un formulario que depsues insertara los datos del usuario en una tabla que seria la base de datos de los usuarios-->
     </div>
 </template>
