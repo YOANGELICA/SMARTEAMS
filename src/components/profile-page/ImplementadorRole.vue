@@ -18,7 +18,7 @@
 
 <style scoped>
     .container{
-        height: 150px;
+        height: 160px;
         width: 420px;
         /* background-color: #FF5758; */
         background-image: linear-gradient(to right, #f8a31a , #ff3a36);

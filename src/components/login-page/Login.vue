@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div style="text-align: center; color: #FF5758;">
         <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Iniciar sesión </h1><br/>
         <p class="p">Ingrese su correo electónico</p>
@@ -58,8 +58,8 @@ export default {
   border-radius: 24px;
   cursor: text;
 }
-</style> -->
-
+</style>
+<!-- 
 <template>
     <div class="container">
         <div v-if="error" class="alert alert-danger"> {{error}} </div>
@@ -165,4 +165,4 @@ export default {
   border-radius: 24px;
   cursor: text;
 }
-</style>
+</style> -->

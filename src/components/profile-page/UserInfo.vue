@@ -27,6 +27,6 @@
         background-color: #f1f1f1;
         border-radius: 24px;
         padding: 20px;
-        /* box-shadow: 10px 10px 10px #e3e3e3; */
+        box-shadow: 10px 10px 10px #e3e3e3;
     }
 </style>

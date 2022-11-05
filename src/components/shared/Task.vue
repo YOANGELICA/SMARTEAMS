@@ -2,7 +2,7 @@
     <div class="main-container" >
         <input class="form-check-input" type="checkbox" value="" id="task">
         <label class="form-check-label" for="task">
-            <h2 style=" font-weight: 750; font-size: 25px;"> {{TaskName}} </h2>
+            <h2 style=" font-weight: 750; font-size: 25px;"> <div style="width: 10px"/> {{TaskName}} </h2>
             <p> fecha límite: {{deadline}} <br/>  {{taskUser}} </p>
         </label>
     </div>
@@ -28,6 +28,6 @@
         color:#000000;
         border-radius: 24px;
         padding: 13px 20px;
-        /* box-shadow: 10px 10px 10px #e3e3e3; */
+        box-shadow: 10px 10px 10px #e3e3e3;
     }
 </style>

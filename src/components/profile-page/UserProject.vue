@@ -1,7 +1,7 @@
 <template>
     <div class="main-container">
         <div class="right-container" style="width: 25%; height: 100%;float:left; ">
-            <img src="@/assets/project-img.png" style="height: 100px; width:100px">
+            <img src="@/assets/project-icon.png" style="height: 100px; width:100px; filter: drop-shadow(10px 10px 10px #e3e3e3);">
         </div>
         <div class="left-container" style="width: 75%; height: 100%; float:right; ">
             <!-- <h2 style=" font-weight: 750; font-size: 25px;"> {{projectName}} Angelica Portocarrero Quintero</h2> -->

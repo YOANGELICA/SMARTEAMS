@@ -15,9 +15,9 @@
         </div>
         <div class="float-child" >
             <!-- <Desarrollador/> -->
-            <!-- <Clarificador/> -->
+            <Clarificador/>
             <!-- <Ideador/> -->
-            <Implementador/>
+            <!-- <Implementador/> -->
             <div style="height:40px;"></div>
             <h2> Mis tareas asignadas </h2>
             <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/><br/> 
