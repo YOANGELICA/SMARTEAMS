@@ -2,18 +2,19 @@
     <!-- <div class="menu">
       <Menu/>
     </div> -->
-    <h1> Elige tu perfil </h1>
+    <h1> Elige tu perfil </h1>      
     <div class="float-container">
+
       <div class="float-child">
         <img src="@/assets/student-icon.png" style="height: 300px; width: 300px;"/>
-        <h1> Estudiante </h1>
+        <span class="caption"> Estudiante </span>
       </div>
-      <div class="float-child" id="img" style="position: relative;">
-        <div class="center">
-            <img src="@/assets/teacher-icon.png" style="height: 300px; width: 300px"/>
-        </div>
-        <h1> Docente </h1>
-    </div>
+
+      <div class="float-child">
+        <img src="@/assets/teacher-icon.png" style="height: 300px; width: 300px"/>
+        <span class="caption"> Docente </span>
+      </div>
+
     </div>
 
     <RouterView />
@@ -33,7 +34,16 @@
   <style scoped>
   h1{
     font-weight: 800; 
-    font-size:50px
+    font-size: 50px;
+    color: #000;
+    text-align: center;
+    margin: 0 0 8px;
+  }
+  .caption{
+    font-weight: 800; 
+    font-size: 40px;
+    color: #FF5758;
+    display: block;
   }
   .float-container {
       border: 3px solid rgb(255, 255, 255);
@@ -41,21 +51,10 @@
       width: 1200px;
   }
   .float-child {
-      float: left;
-      padding: 30px;
-      border: 2px solid #fff;
-      display: flex;
-      justify-content: center;
+      vertical-align: top;
+      display: inline-block;
+      text-align: center;
+      align-items: center;
+      width: 50%;
   }  
-  .center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-  #img{
-    text-align: right;
-  }
   </style>
