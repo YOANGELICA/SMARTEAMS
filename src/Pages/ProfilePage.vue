@@ -3,7 +3,7 @@
     <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Mi perfil </h1><br/>
     <div class="float-container">
         <div class="float-child">
-            <UserInfo  username="Angelica Portocarrero Quintero" useremail="angelica.portocarrero12+1@gmail.com"/>
+            <UserInfo  username="Angelica Portocarrero Quintero" useremail="angelica.portocarrero@gmail.com"/>
             <div style="height:20px;"></div>
             <router-link to="/Create" id="create-btn"> + Crear un equipo </router-link>
             <RouterView />
