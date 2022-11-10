@@ -6,7 +6,7 @@
     <div class="float-child" style="width: 52%; color:#FF5758;">
       <h1 style="font-weight: 800; font-size:50px"> ¡Bienvenid@ a Smarteams! </h1> <br/>
       <p style="font-weight: 500; font-size:20px; color:#000000;"> Una plataforma para crear equipos imparables. </p><br/>
-      <router-link to="/Role" class="btn"> Registrarse </router-link><br/>
+      <router-link to="/Register" class="btn"> Registrarse </router-link><br/>
         <div style="height: 20px;"></div>
       <p style="font-style: italic; font-size:18px; color:#FF5758; margin: 10px;"> O, si ya tienes una cuenta... </p>
       <router-link to="/Login" class="btn"> Iniciar sesión </router-link>

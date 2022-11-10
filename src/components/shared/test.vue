@@ -371,7 +371,7 @@
                 <input type="radio" id="two" :value="5" v-model.number="q37" /><label for="5"> Estoy de acuerdo</label>
             </li>
         </ol>
-        <button @click="findRole"> fin </button>
+        <button @click="findRole" class="btn"> He terminado </button>
     </div>
 
     <div v-if= "this.mainRole == 'clarificador'">
@@ -456,4 +456,29 @@ li, p{
     color: #000;
     font-weight: bold;
 }
+.btn{
+  width: 200px;
+  background-color: #FF5758;
+  color: #ffffff;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-weight: 750;
+  font-size: 18px;
+  text-align:center;
+}
+
+input[type="radio"] {
+  margin: 5px;
+  font: inherit;
+  color: currentColor;
+  width: 20px;
+  height: 20px;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+}
+
+
 </style>
