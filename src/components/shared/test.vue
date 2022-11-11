@@ -374,16 +374,16 @@
         <button @click="findRole" class="btn"> He terminado </button>
     </div>
 
-    <div v-if= "this.mainRole == 'clarificador'">
+    <div v-if= "this.role == 'clarificador'">
         <p>tu rol es: clarificador</p>
     </div>
-    <div v-else-if= "this.mainRole == 'ideador'">
+    <div v-else-if= "this.role == 'ideador'">
         <p>tu rol es: ideador</p>
     </div>
-    <div v-else-if= "this.mainRole == 'desarrollador'">
+    <div v-else-if= "this.role == 'desarrollador'">
         <p>tu rol es: desarrollador</p>
     </div>
-    <div v-else-if= "this.mainRole == 'implementador'">
+    <div v-else-if= "this.role == 'implementador'">
         <p>tu rol es: implementador</p>
     </div>
 </template>
@@ -396,7 +396,7 @@ export default {
       q1: 0, q2: 0, q3:0, q4:0, q5:0, q6:0, q7:0, q8:0, q9:0, q10:0, q11:0, q12:0, q13:0, q14:0, 
       q15:0, q16:0, q17:0, q18:0, q19:0, q20:0, q21:0, q22:0, q23:0, q24:0, q25:0, q26:0, q27:0,
       q28:0, q29:0, q30:0, q31:0, q32:0, q33:0, q34:0, q35:0, q36:0, q37:0,
-      mainRole: this.mainRole,
+      role: this.role,
     }
   },
   methods:{
@@ -420,9 +420,9 @@ export default {
         var arr = Object.values(roles);
         var names = Object.keys(roles);
 
-        let mainRole = names[arr.indexOf(max,0)]
+        let role = names[arr.indexOf(max,0)]
 
-        console.log("rol principal: "+mainRole)
+        console.log("rol principal: "+role)
 
     }
   }
