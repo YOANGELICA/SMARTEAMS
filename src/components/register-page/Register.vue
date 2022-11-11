@@ -15,13 +15,17 @@
         <p>Vuelva a ingresar la contraseña: </p>
         <input type="password" v-model="password2" class="field"><br/>
 
-        <p> Seleccione su perfil de pensamiento FourSight: </p>
+        <button type="button" class="btn btn-default me-3" @click="tomarTest()"> Tomar Test </button>
+
+        <br/>
+
+        <!-- <p> Seleccione su perfil de pensamiento FourSight: </p>
         <select id="year" v-model="year" class="date-form">
             <option value="0">Ideador</option>
             <option value="1">Clarificador</option>
             <option value="2">Desarrollador</option>
             <option value="3">Implementador</option>
-       </select><br/>
+       </select><br/> -->
        <router-link to="/Login" @click="createUser()" class="btn" > Crear usuario </router-link>
         <RouterView />
 <!-- lo ideal seria que esto fuera un formulario que depsues insertara los datos del usuario en una tabla que seria la base de datos de los usuarios-->
@@ -42,6 +46,9 @@ export default {
     methods:{
         createUser(){
             console.log("NUEVO USUARIO REGISTRADO")
+        },
+        tomarTest() {
+            this.$emit('tomar-test', true)
         }
     }
 }

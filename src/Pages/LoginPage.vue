@@ -1,6 +1,6 @@
 <template>
     <!-- <Menu/> -->
-    <div style="left: 40%">
+    <div >
         <Login/>
     </div>
 

@@ -58,7 +58,7 @@
                 <input type="radio" id="two" :value="2" v-model.number="q6" /> 
                 <input type="radio" id="two" :value="3" v-model.number="q6" />
                 <input type="radio" id="two" :value="4" v-model.number="q6" /> 
-                <input type="radio" id="two" :value="5" v-model.number="q6s" /><label for="5"> Estoy de acuerdo</label>
+                <input type="radio" id="two" :value="5" v-model.number="q6" /><label for="5"> Estoy de acuerdo</label>
             </li>
             <br/>
             <li>
@@ -375,16 +375,16 @@
     </div>
 
     <div v-if= "this.mainRole == 'clarificador'">
-        <p>tu rol principal es: clarificador</p>
+        <p>tu rol es: clarificador</p>
     </div>
     <div v-else-if= "this.mainRole == 'ideador'">
-        <p>tu rol principal es: ideador</p>
+        <p>tu rol es: ideador</p>
     </div>
     <div v-else-if= "this.mainRole == 'desarrollador'">
-        <p>tu rol principal es: desarrollador</p>
+        <p>tu rol es: desarrollador</p>
     </div>
     <div v-else-if= "this.mainRole == 'implementador'">
-        <p>tu rol principal es: implementador</p>
+        <p>tu rol es: implementador</p>
     </div>
 </template>
 
@@ -397,7 +397,6 @@ export default {
       q15:0, q16:0, q17:0, q18:0, q19:0, q20:0, q21:0, q22:0, q23:0, q24:0, q25:0, q26:0, q27:0,
       q28:0, q29:0, q30:0, q31:0, q32:0, q33:0, q34:0, q35:0, q36:0, q37:0,
       mainRole: this.mainRole,
-      subRole: this.subRole
     }
   },
   methods:{
@@ -415,7 +414,6 @@ export default {
                 
         var arr = Object.values(roles);
         let max = arr.sort((a,b)=>a-b).reverse()[0];
-        let sec = arr.sort((a,b)=>a-b).reverse()[1];
 
         // console.log(max, sec)
 
@@ -423,10 +421,8 @@ export default {
         var names = Object.keys(roles);
 
         let mainRole = names[arr.indexOf(max,0)]
-        let subRole = names[arr.indexOf(sec,0)]
 
         console.log("rol principal: "+mainRole)
-        console.log("rol secundario: "+subRole)
 
     }
   }

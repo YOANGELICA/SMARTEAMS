@@ -4,18 +4,18 @@
     <RouterView /> -->
     <!-- <nav style="background-color: #FF5758; color:#ffffff"> SMARTEAMS </nav>  -->
     <!-- navbar provisional ksjnfn -->
-    <Task/>
+    <CreateTask/>
 </template>
 
 <script>
 import Menu from '@/components/shared/menu.vue';
-import Task from '@/components/task-page/CreateTask.vue';
+import CreateTask from '@/components/task-page/CreateTask.vue';
 
 export default{
     name: 'TaskPage',
     components: {
     Menu,
-    Task
+    CreateTask
     }
 }
 </script>

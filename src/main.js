@@ -5,6 +5,8 @@ import App from './App.vue';
 // import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
 // import 'bootstrap-vue/dist/bootstrap-vue.css';
 // import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
 
 // Vue.use(BootstrapVue);
 // import store from './store';
