@@ -17,10 +17,8 @@
             <router-link to="/AddTask" id="add-btn"> + Añadir una tarea </router-link><br/>
             <div style="height:40px;"></div>
             <h2> Tareas asignadas </h2>
+            <!-- v-for -->
             <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 1" deadline="dd-mm-yy"/><br/>
-            <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 2" deadline="dd-mm-yy" /><br/>
-            <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 3" deadline="dd-mm-yy" /> <br/>
-            <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 2" deadline="dd-mm-yy" /><br/>
         </div>
     </div>
     <RouterView/>

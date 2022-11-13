@@ -4,18 +4,18 @@
         <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Añada una tarea </h1><br/>
 
         <p> Nombre de la tarea </p>
-        <input type="text" v-model="taskname" class="field"><br/>
+        <input type="text" v-model="title" class="field"><br/>
 
         <p> Integrante responsable: </p>
-        <select id="user-select" v-model="taskuser" class="form">
-            <option value="0"> Angelica Portocarrero </option>
-            <option value="1"> John Smith </option>
-            <option value="2"> Maria Quintero </option>
-            <option value="3"> Mateo Colinas </option>
-       </select><br/>
+        <input type="text" v-model="user" class="field" placeholder="email"><br/>
 
        <p>Fecha límite</p>
-            <label for="day" class="label"> Día </label>
+       <input type="date" id="deadline" class="date-form" name="deadline"
+            value="dd/mm/aaaa"
+            min="2022-11-20" max="2025-12-31" v-model="deadline">
+        
+        <br/>
+            <!-- <label for="day" class="label"> Día </label>
         <select id="day" v-model="day" class="form">
             <option value="0">01</option>
             <option value="1">02</option>
@@ -70,7 +70,7 @@
             <option value="1">2023</option>
             <option value="2">2024</option>
             <option value="3">2025</option>
-       </select>
+       </select> -->
 
         <button @click="createTask()" class="btn"> Añadir tarea </button>
 <!-- lo ideal seria que esto fuera un formulario que depsues insertara los datos del usuario en una tabla que seria la base de datos de los usuarios-->
@@ -82,11 +82,9 @@ export default {
     name: 'AddTask',
     data(){
       return{
-          taskname:"",
-          taskuser:"",
-          day: "",
-          month: "",
-          year: ""    
+          title:"",
+          user:"",
+          deadline: "",   
       }
     },
     methods:{
@@ -107,9 +105,6 @@ label{
     font-weight: 800;
     color: #FF5758;
     font-size: 20px
-}
-#user-select{
-    width:200px;
 }
 .btn{
   width: 200px;
@@ -134,6 +129,11 @@ label{
   border: none;
   border-radius: 24px;
   cursor: text;
+  font-family: helvetica;
+}
+::placeholder{
+  color: #a6a6a6;
+  font-style: italic;
 }
 .form{
   width: 150px;
@@ -145,6 +145,16 @@ label{
   border-radius: 24px;
   cursor: pointer;
   width: 80px;
+}
+.date-form{
+  width: 150px;
+  background-color: #EBE9E9;
+  color: #5c5c5c;
+  padding: 5px 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
 }
 #month{width: 100px;}
 </style>

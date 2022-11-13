@@ -371,24 +371,15 @@
                 <input type="radio" id="two" :value="5" v-model.number="q37" /><label for="5"> Estoy de acuerdo</label>
             </li>
         </ol>
-        <button @click="findRole" class="btn"> He terminado </button>
+        <button @click="findRole(); crearUsuario()" class="btn"> He terminado </button>
     </div>
 
-    <div v-if= "this.role == 'clarificador'">
-        <p>tu rol es: clarificador</p>
-    </div>
-    <div v-else-if= "this.role == 'ideador'">
-        <p>tu rol es: ideador</p>
-    </div>
-    <div v-else-if= "this.role == 'desarrollador'">
-        <p>tu rol es: desarrollador</p>
-    </div>
-    <div v-else-if= "this.role == 'implementador'">
-        <p>tu rol es: implementador</p>
-    </div>
+
 </template>
 
 <script>
+import {useStore} from 'vuex'
+
 export default {
     name: 'Test',
     data() {
@@ -397,10 +388,14 @@ export default {
       q15:0, q16:0, q17:0, q18:0, q19:0, q20:0, q21:0, q22:0, q23:0, q24:0, q25:0, q26:0, q27:0,
       q28:0, q29:0, q30:0, q31:0, q32:0, q33:0, q34:0, q35:0, q36:0, q37:0,
       role: this.role,
+      store: useStore()
     }
   },
   methods:{
-    findRole() {
+    crearUsuario(){
+        this.$emit('crear-usuario', true)
+    },
+    async findRole() {
 
         var roles = {}
 
@@ -424,15 +419,18 @@ export default {
 
         console.log("rol principal: "+role)
 
+        await this.store.dispatch('user/registrarRol', role)
+
+        this.$emit('crear', true)
     }
   }
 }
 </script>
 
 <style scoped>
-.test-container{
-    /* text-align: center; */
-}
+/* .test-container{
+    text-align: center;
+} */
 
 /* label{
     color: #000;

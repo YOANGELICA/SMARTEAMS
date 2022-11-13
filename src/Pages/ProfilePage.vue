@@ -3,15 +3,14 @@
     <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Mi perfil </h1><br/>
     <div class="float-container">
         <div class="float-child">
-            <UserInfo  username="Angelica Portocarrero Quintero" useremail="angelica.portocarrero@gmail.com"/>
+            <UserInfo  :username="user.name" :useremail="user.email"/>
             <div style="height:20px;"></div>
             <router-link to="/Create" id="create-btn"> + Crear un equipo </router-link>
             <RouterView />
             <div style="height:40px;"></div>
             <h2> Mis proyectos </h2>
-            <!-- <UserProject projectName="Proyecto 1" projectDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/> -->
-            <UserProject projectname="Proyecto 1"/>
-            <UserProject projectname="Proyecto 2"/>
+            <UserProject v-for="proyecto in proyectos" :projectname="proyecto.equipo.title"/>
+        
         </div>
         <div class="float-child" >
             <!-- <Desarrollador/> -->
@@ -20,9 +19,9 @@
             <!-- <Implementador/> -->
             <div style="height:40px;"></div>
             <h2> Mis tareas asignadas </h2>
-            <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/><br/> 
-            <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/><br/> 
-            <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/><br/> 
+            <Task v-for="task in tasks" :TaskName="task.title" :deadline="task.deadline"/>
+            <!-- <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/><br/>  -->
+
         </div>
     </div>
 </template>
@@ -35,9 +34,12 @@ import Desarrollador from '@/components/profile-page/DesarrolladorRole.vue';
 import Clarificador from '@/components/profile-page/ClarificadorRole.vue';
 import Ideador  from '@/components/profile-page/IdeadorRole.vue';
 import Implementador from '@/components/profile-page/ImplementadorRole.vue';
-
 import UserProject from '@/components/profile-page/UserProject.vue';
 import Task from '@/components/shared/Task.vue';
+
+import {smarteamsApi} from '@/api/smarteamsApi';
+import { useRouter } from 'vue-router';
+
 
 export default{
     name: 'ProfilePage',
@@ -52,7 +54,44 @@ export default{
     UserProject,
     Task
     },
-}
+    data(){
+        return {
+            user: JSON.parse( localStorage.getItem("user")),
+            email: "",
+            router: useRouter(),
+            proyectos: [],
+            tasks: []
+        }
+    },
+    methods:{
+        async callApi(){
+            try{
+                const api = await smarteamsApi.get('/api/equipos/list', {headers: {'x-token': localStorage.getItem('token')}})
+                if (api.status == 200){
+                        this.proyectos = api.data.equipos
+                    }
+                }
+                catch(error){
+                    console.log(error)
+                }
+            },
+        async callApiTasks(){
+            try{
+                const api = await smarteamsApi.get('/api/task/list', {headers: {'x-token': localStorage.getItem('token')}})
+                if (api.status == 200){
+                        this.tasks = api.data.tasks
+                    }
+                }
+                catch(error){
+                    console.log(error)
+                }
+        }
+    },
+    mounted(){
+        this.callApi()
+    }
+    }
+
 </script>
 
 <style scoped>

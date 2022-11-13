@@ -2,13 +2,12 @@
     <!-- <Menu/> -->
     <div class="row mb-5 pb-5" >
         <div class="col-12 d-flex justify-content-center">
-            <Register id="reg" @tomar-test="tomarTest = true"/>  
+            <Register @tomar-test="tomarTest = true"/>  
         </div>
     </div>
-    <div class="row">
+    <div class="row"> 
         <div class="col-12">
             <test v-if="tomarTest"/>
-
         </div>
     </div>
     <!-- <router-link to="/Profile"> MI PERFIL </router-link>

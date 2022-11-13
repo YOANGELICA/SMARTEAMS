@@ -18,21 +18,20 @@
         <button type="button" class="btn btn-default me-3" @click="tomarTest()"> Tomar Test </button>
 
         <br/>
+        <!-- @crear-usuario="crearUsuario = true" -->
+        <!-- <button v-if="crearUsuario" @click="callApi()" class="btn" > Crear usuario </button> -->
+        <button @click="callApi()" class="btn" > Crear usuario </button>
 
-        <!-- <p> Seleccione su perfil de pensamiento FourSight: </p>
-        <select id="year" v-model="year" class="date-form">
-            <option value="0">Ideador</option>
-            <option value="1">Clarificador</option>
-            <option value="2">Desarrollador</option>
-            <option value="3">Implementador</option>
-       </select><br/> -->
-       <router-link to="/Login" @click="createUser()" class="btn" > Crear usuario </router-link>
         <RouterView />
-<!-- lo ideal seria que esto fuera un formulario que depsues insertara los datos del usuario en una tabla que seria la base de datos de los usuarios-->
     </div>
 </template>
 
 <script>
+import {smarteamsApi} from '../../api/smarteamsApi';
+import {useStore} from 'vuex'
+import { useRouter } from 'vue-router';
+
+
 export default {
     name: 'Register',
     data(){
@@ -40,16 +39,43 @@ export default {
           username:"",
           email:"",
           password: "",
-          password2: ""     
+          password2: "",
+          store: useStore(),
+          router: useRouter(),
+          crearUsuario: false
+
       }
     },
+    computed:{
+        rol(){
+            return this.store.rol
+        }
+    },
     methods:{
-        createUser(){
-            console.log("NUEVO USUARIO REGISTRADO")
-        },
         tomarTest() {
             this.$emit('tomar-test', true)
-        }
+            // this.createUsuario = true
+        },
+        async callApi(){
+            if (this.password != this.password2){
+                alert("La contraseña debe ser igual en ambos campos")
+            } 
+            else {
+                try{
+                    const api = await smarteamsApi.post('/api/auth/new', {name: this.username, email: this.email, password: this.password, role: this.role})
+
+                    if (api.status == 200){
+                        this.router.push("/Login")
+                    }
+                    console.log(api, api.status)
+                }
+                catch(error){
+                    console.log(error)
+                } 
+            }
+
+        },
+
     }
 }
 </script>

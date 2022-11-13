@@ -3,93 +3,56 @@
   <div class="float-container">
     <div class="float-child">
         <p> Nombre del proyecto </p>
-            <input type="text" id="pname" class="input" placeholder="Escribe aquí..." v-model="proyect_name">
-        <p> Inserte los correos electrónicos de los usuarios </p>
-            <textarea type="text" id="user-emails" class="input" placeholder="Separados por comas" v-model="proyect_users"> </textarea>
+            <input type="text" id="pname" class="input" placeholder="Escribe aquí..." v-model="title">
+        <p> Inserte los correos electrónicos de los integrantes </p>
+            <textarea type="text" id="user-emails" class="input" placeholder="Separados por comas, sin epsacios" v-model="project_users"> </textarea>
         <!-- <p style="font-style: italic"> Ó, Inserte una lista de usuarios (.csv / .xlsx)</p>
             <button id="insert" class="btn"> Insertar </button> <br/>  -->
     </div>
     <div class="float-child">
-            <p>Fecha límite</p>
-            <label for="day" class="label"> Día </label>
-        <select id="day" v-model="day" class="date-form">
-            <option value="0">01</option>
-            <option value="1">02</option>
-            <option value="2">03</option>
-            <option value="3">04</option>
-            <option value="4">05</option>
-            <option value="5">06</option>
-            <option value="6">07</option>
-            <option value="7">08</option>
-            <option value="8">09</option>
-            <option value="9">10</option>
-            <option value="10">11</option>
-            <option value="11">12</option>
-            <option value="12">13</option>
-            <option value="13">14</option>
-            <option value="14">15</option>
-            <option value="15">16</option>
-            <option value="16">17</option>
-            <option value="17">18</option>
-            <option value="18">19</option>
-            <option value="19">20</option>
-            <option value="20">21</option>
-            <option value="21">22</option>
-            <option value="22">23</option>
-            <option value="23">24</option>
-            <option value="24">25</option>
-            <option value="25">26</option>
-            <option value="26">27</option>
-            <option value="27">28</option>
-            <option value="28">29</option>
-            <option value="29">30</option>
-            <option value="30">31</option>
-       </select>
-       <label for="month" class="label"> Mes </label>
-       <select id="month" v-model="month" class="date-form">
-            <option value="0"> Enero</option>
-            <option value="1">Febrero</option>
-            <option value="2">Marzo</option>
-            <option value="3">Abril</option>
-            <option value="4">Mayo</option>
-            <option value="5">Junio</option>
-            <option value="6">Julio</option>
-            <option value="7">Agosto</option>
-            <option value="8">Septiembre</option>
-            <option value="9">Octubre</option>
-            <option value="10">Noviembre</option>
-            <option value="11">Diciembre</option>
-       </select>
-       <label for="year" class="label"> Año </label>
-       <select id="year" v-model="year" class="date-form">
-            <option value="0">2022</option>
-            <option value="1">2023</option>
-            <option value="2">2024</option>
-            <option value="3">2025</option>
-       </select>
+      <!-- <label for="start">Fecha límite:</label> -->
+      <p>Fecha límite:</p>
+
+      <input type="date" id="deadline" class="date-form" name="deadline"
+            placeholder="dd/mm/aaaa"
+            min="2022-11-20" max="2025-12-31" v-model="deadline">
+           
        <p>Añada una descripción</p>
-        <textarea type="text" id="desc" class="input" placeholder="Escribe aquí..." v-model="proyect_desc"> </textarea> <br/>
-       <button id="listo-btn" @click="createTeam()" class="btn">¡Listo!</button>
+        <textarea type="text" id="desc" class="input" placeholder="Escribe aquí..." v-model="description"> </textarea> <br/>
+       <button id="listo-btn" @click="callApi()" class="btn">¡Listo!</button>
     </div>
   </div>
 </template>
 
 <script>
+import {smarteamsApi} from '../../api/smarteamsApi';
+import { useRouter } from 'vue-router';
+
 export default {
     name: 'Create',
     data(){
       return{
-          proyect_name:"",
-          proyect_users:"",
-          day:"",
-          month: "",
-          year: "",
-          proyect_desc:""
+          title:"",
+          project_users:"",
+          deadline:"",
+          description:"",
+          router: useRouter()
           }
     },
     methods:{
-        createTeam(){
-            console.log("EQUIPO CREADO")
+        async callApi(){
+            try{
+                const api = await smarteamsApi.post('/api/equipos/create', {title: this.title, project_users: this.project_users, deadline: this.deadline, description: this.description},
+                {headers: {'x-token': localStorage.getItem('token')}}
+                )
+
+                if (api.status == 200){
+                    this.router.push("/Project")
+                }
+            }
+            catch(error){
+                console.log(error)
+            } 
         }
     }
 }
@@ -169,10 +132,10 @@ p{font-weight: 800;
 font-size: 21px;
 }
 .date-form{
-  width: 70px;
+  width: 150px;
   background-color: #EBE9E9;
   color: #5c5c5c;
-  padding: 5px 5px;
+  padding: 5px 10px;
   margin: 10px 0;
   border: none;
   border-radius: 24px;

@@ -9,12 +9,12 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
 
 // Vue.use(BootstrapVue);
-// import store from './store';
+import store from './store';
 import router from './router/router';
 import './assets/main.css'
 
 createApp(App)
     // .use(bootstrap)
-    // .use(store)
+    .use(store)
     .use(router)
     .mount('#app')

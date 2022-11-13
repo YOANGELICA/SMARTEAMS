@@ -5,25 +5,44 @@
         <input type="text" v-model="email" class="field"><br/>
         <p class="p">Ingrese su contraseña</p>
         <input type="password" v-model="password" class="field"><br/>
-        <router-link to="/Profile" @click="login()" class="btn"> Acceder </router-link>
+        <button @click="callApi()" class="btn"> Acceder </button>
         <RouterView />
     </div>
 </template>
 
 <script>
+import { useRouter } from 'vue-router';
+import {smarteamsApi} from '../../api/smarteamsApi';
+
 export default {
     name: 'Login',
     data(){
       return{
-          username:"",
           email:"",
           password: "",
-          password2: ""     
+          router: useRouter()
       }
     },
     methods:{
-        login(){
-            console.log("SESIÓN INICIADA")
+        async callApi(){
+            try{
+                const api = await smarteamsApi.post('/api/auth/login', {email: this.email, password: this.password})
+                
+                if (api.status == 200){
+                        localStorage.setItem("token", api.data.token),
+                        localStorage.setItem("user", JSON.stringify(api.data.usuario))
+                        console.log(api)
+                    
+                    this.router.push("/Profile")
+                }
+                else{
+                    throw new Error("usuario inválido") // sale por la variable error
+                }
+            }
+            catch(error){
+                alert("Email o contraseña incorrecto") // sweetalert
+                console.log(error)
+            } 
         }
     }
 }
