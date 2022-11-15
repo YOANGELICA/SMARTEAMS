@@ -1,37 +1,25 @@
 <template>
     <div style="text-align: center; height: 520px; width: 520px; color: #FF5758;">
-
         <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Regístrate ahora </h1><br/>
-
         <p>Ingrese su nombre completo: </p>
         <input type="text" v-model="username" class="field"><br/>
-
         <p>Ingrese su correo electónico: </p>
         <input type="text" v-model="email" class="field"><br/>
-
         <p>Cree una contraseña: </p>
         <input type="password" v-model="password" class="field"><br/>
-
         <p>Vuelva a ingresar la contraseña: </p>
         <input type="password" v-model="password2" class="field"><br/>
-
-        <button type="button" class="btn btn-default me-3" @click="tomarTest()"> Tomar Test </button>
-
-        <br/>
-        <!-- @crear-usuario="crearUsuario = true" -->
-        <!-- <button v-if="crearUsuario" @click="callApi()" class="btn" > Crear usuario </button> -->
+        <button type="button" class="btn btn-default me-3" @click="tomarTest()"> Tomar Test </button> <br/>
         <button @click="callApi()" class="btn" > Crear usuario </button>
-
-        <RouterView />
     </div>
 </template>
+     <!-- @crear-usuario="crearUsuario = true" -->
+        <!-- <button v-if="crearUsuario" @click="callApi()" class="btn" > Crear usuario </button> -->
 
 <script>
 import {smarteamsApi} from '../../api/smarteamsApi';
 import {useStore} from 'vuex'
 import { useRouter } from 'vue-router';
-
-
 export default {
     name: 'Register',
     data(){
@@ -40,21 +28,19 @@ export default {
           email:"",
           password: "",
           password2: "",
+          role: "",
           store: useStore(),
           router: useRouter(),
-          crearUsuario: false
-
       }
     },
     computed:{
         rol(){
-            return this.store.rol
+            this.role = this.store.rol
         }
     },
     methods:{
         tomarTest() {
             this.$emit('tomar-test', true)
-            // this.createUsuario = true
         },
         async callApi(){
             if (this.password != this.password2){
@@ -62,8 +48,10 @@ export default {
             } 
             else {
                 try{
-                    const api = await smarteamsApi.post('/api/auth/new', {name: this.username, email: this.email, password: this.password, role: this.role})
-
+                    const api = await smarteamsApi.post('/api/auth/new', {name: this.username, 
+                                                                          email: this.email, 
+                                                                          password: this.password, 
+                                                                          role: this.role})
                     if (api.status == 200){
                         this.router.push("/Login")
                     }
@@ -73,9 +61,7 @@ export default {
                     console.log(error)
                 } 
             }
-
         },
-
     }
 }
 </script>

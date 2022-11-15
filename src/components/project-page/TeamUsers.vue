@@ -5,8 +5,7 @@
         </div>
         <div class="left-container" style="width: 75%; height: 100%; float:right; ">
             <!-- <h2 style=" font-weight: 750; font-size: 25px;"> {{username}}</h2> -->
-            <router-link to="/Profile" style=" font-weight: 750; font-size: 25px; color:black;"> {{username}} </router-link>
-            <p> {{role}}</p>
+            <p to="/Profile" style=" font-weight: 750; font-size: 25px; color:black;"> {{username}} </p>
         </div>
     </div>
 </template>
@@ -14,8 +13,7 @@
 <script>
     export default {
         props: {
-            "username": String,
-            "role": String
+            "username": String
         },
         name: 'TeamUsers',
     }

@@ -57,7 +57,6 @@ export default{
     data(){
         return {
             user: JSON.parse( localStorage.getItem("user")),
-            email: "",
             router: useRouter(),
             proyectos: [],
             tasks: []
@@ -68,6 +67,7 @@ export default{
             try{
                 const api = await smarteamsApi.get('/api/equipos/list', {headers: {'x-token': localStorage.getItem('token')}})
                 if (api.status == 200){
+                    console.log(api)
                         this.proyectos = api.data.equipos
                     }
                 }
@@ -89,6 +89,7 @@ export default{
     },
     mounted(){
         this.callApi()
+        this.callApiTasks()
     }
     }
 

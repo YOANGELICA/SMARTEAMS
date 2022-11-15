@@ -1,12 +1,11 @@
 <template>
-    <div style="text-align: center; color: #FF5758;">
-        <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Iniciar sesión </h1><br/>
+    <div class="container">
+        <h1> Iniciar sesión </h1><br/>
         <p class="p">Ingrese su correo electónico</p>
         <input type="text" v-model="email" class="field"><br/>
         <p class="p">Ingrese su contraseña</p>
         <input type="password" v-model="password" class="field"><br/>
         <button @click="callApi()" class="btn"> Acceder </button>
-        <RouterView />
     </div>
 </template>
 
@@ -40,7 +39,7 @@ export default {
                 }
             }
             catch(error){
-                alert("Email o contraseña incorrecto") // sweetalert
+                alert("Email o contraseña incorrecto")
                 console.log(error)
             } 
         }
@@ -49,6 +48,15 @@ export default {
 </script>
 
 <style scoped>
+.container{
+    text-align: center;
+    color: #FF5758;
+}
+h1{
+    font-size: 45px;
+    font-weight: 800;
+    color: #000000
+}
 .p{
     font-weight: 800;
     font-size: 20px

@@ -1,4 +1,5 @@
 <template>
+    <div style="height: 70px"></div>
     <div class="test-container">
         <ol>
             <li>
@@ -410,12 +411,12 @@ export default {
         var arr = Object.values(roles);
         let max = arr.sort((a,b)=>a-b).reverse()[0];
 
-        // console.log(max, sec)
+        // console.log(max)
 
         var arr = Object.values(roles);
         var names = Object.keys(roles);
 
-        let role = names[arr.indexOf(max,0)]
+        let role = names[arr.indexOf(max,0)] 
 
         console.log("rol principal: "+role)
 

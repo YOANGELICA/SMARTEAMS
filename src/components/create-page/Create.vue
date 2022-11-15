@@ -5,20 +5,18 @@
         <p> Nombre del proyecto </p>
             <input type="text" id="pname" class="input" placeholder="Escribe aquí..." v-model="title">
         <p> Inserte los correos electrónicos de los integrantes </p>
-            <textarea type="text" id="user-emails" class="input" placeholder="Separados por comas, sin epsacios" v-model="project_users"> </textarea>
-        <!-- <p style="font-style: italic"> Ó, Inserte una lista de usuarios (.csv / .xlsx)</p>
-            <button id="insert" class="btn"> Insertar </button> <br/>  -->
+            <textarea type="text" id="user-emails" 
+            class="input" placeholder="Separados por comas, sin espacios" 
+            v-model="project_users"> </textarea>
     </div>
     <div class="float-child">
-      <!-- <label for="start">Fecha límite:</label> -->
       <p>Fecha límite:</p>
-
       <input type="date" id="deadline" class="date-form" name="deadline"
             placeholder="dd/mm/aaaa"
             min="2022-11-20" max="2025-12-31" v-model="deadline">
-           
        <p>Añada una descripción</p>
-        <textarea type="text" id="desc" class="input" placeholder="Escribe aquí..." v-model="description"> </textarea> <br/>
+        <textarea type="text" id="desc" class="input" placeholder="Escribe aquí..." 
+        v-model="description"> </textarea> <br/>
        <button id="listo-btn" @click="callApi()" class="btn">¡Listo!</button>
     </div>
   </div>
@@ -27,7 +25,6 @@
 <script>
 import {smarteamsApi} from '../../api/smarteamsApi';
 import { useRouter } from 'vue-router';
-
 export default {
     name: 'Create',
     data(){
@@ -42,7 +39,10 @@ export default {
     methods:{
         async callApi(){
             try{
-                const api = await smarteamsApi.post('/api/equipos/create', {title: this.title, project_users: this.project_users, deadline: this.deadline, description: this.description},
+                const api = await smarteamsApi.post('/api/equipos/create', {title: this.title, 
+                                                                            project_users: this.project_users, 
+                                                                            deadline: this.deadline, 
+                                                                            description: this.description},
                 {headers: {'x-token': localStorage.getItem('token')}}
                 )
 
