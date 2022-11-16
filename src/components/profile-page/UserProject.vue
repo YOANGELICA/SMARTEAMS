@@ -5,8 +5,7 @@
         </div>
         <div class="left-container" style="width: 75%; height: 100%; float:right; ">
             <!-- <h2 style=" font-weight: 750; font-size: 25px;"> {{projectName}} Angelica Portocarrero Quintero</h2> -->
-            <router-link to="/Project" style=" font-weight: 750; font-size: 25px; color:black;"> {{projectname}} </router-link>
-            <!-- <p> más info </p> -->
+            <router-link :to="'/Project/'+pid" style=" font-weight: 750; font-size: 25px; color:black;"> {{projectname}}</router-link>
         </div>
             <RouterView />
     </div>
@@ -15,8 +14,8 @@
 <script>
     export default {
     props: {
-        "projectname": String
-
+        "projectname": String,
+        "pid": String
     }
 }
 </script>

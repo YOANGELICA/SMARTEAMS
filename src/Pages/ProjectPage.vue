@@ -1,27 +1,24 @@
 <template>
-    <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Proyecto 1 </h1> <br/>
-    <!-- <h1 style="font-size: 45px; font-weight: 800; color: #000000"> {{equipo.title}} </h1> <br/> -->
+    <h1 style="font-size: 45px; font-weight: 800; color: #000000"> {{title}} </h1> <br/>
 
     <div class="float-container">
         <div class="float-child">
             <h2> Descripción </h2>
-            <ProjectDesc desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
-            <!-- <ProjectDesc :desc="equipo.description"/> -->
+            <ProjectDesc :desc="desc"/>
             <br/>
             <h2> Integrantes </h2>
-            <TeamUsers v-for="x in usuarios" :username="x.usuario.name"/>
-            <!-- <TeamUsers username="Integrante 2"/>  -->
+            <TeamUsers v-for="x in usuarios" :username="x.user.name"/>
+
         </div>
         <div class="float-child">
             <h2> Fecha límite: </h2>
-            <!-- <p> {{equipo.deadline}} </p> -->
-            <router-link to="/AddTask" id="add-btn"> + Añadir una tarea </router-link><br/>
-
+            <p> {{deadline}} </p>
+            <router-link :to="'/AddTask/'+pid" id="add-btn"> + Añadir una tarea </router-link><br/>
             <div style="height:40px;"></div>
-
             <h2> Tareas asignadas </h2>
-            <!-- <Task TaskName="Lorem Ipsum sit amet" taskUser="Integrante 1" deadline="dd-mm-yy"/><br/> -->
-            <Task v-for="x in tasks" :TaskName="x.task.title" :taskUser="x.task.user" :deadline="x.task.deadline"/>
+            <!-- <Task TaskName="Investigar antecedentes" taskUser="John Smith" deadline="27-11-22"/><br/> -->
+            <!-- <Task TaskName="Redactar introducción" taskUser="Luis Perez" deadline="30-11-22"/><br/> -->
+            <Task v-for="task in tasks" :TaskName="task.title" :taskUser="task.user?.name" :deadline="task.deadline"/>
         </div>
     </div>
     <RouterView/>
@@ -34,7 +31,7 @@ import ProjectDesc from '@/components/project-page/ProjectDesc.vue';
 import TeamUsers from '@/components/project-page/TeamUsers.vue';
 import Task from '@/components/shared/Task.vue';
 import {smarteamsApi} from '@/api/smarteamsApi';
-import { useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
 
 export default{
     name: 'ProjectPage',
@@ -47,19 +44,21 @@ export default{
     data(){
         return {
             equipo: JSON.parse( localStorage.getItem("equipo")),
-            router: useRouter(),
-            usuarios: [],
+            route: useRoute(),
+            usuarios: [], 
             tasks: [],
-
+            title: "",
+            deadline:"",
+            desc:"",
         }
     },
     methods:{
         async callApi(){
             try{
-                const api = await smarteamsApi.get('/api/equipos/listUsers/:id', {headers: {'x-token': localStorage.getItem('token')}})
+                const api = await smarteamsApi.get('/api/equipos/listUsers/'+ this.$route.params.id, {headers: {'x-token': localStorage.getItem('token')}})
                 if (api.status == 200){
-                    console.log(api)
-                        this.usuarios = api.data.usuarios // USUARIOS SALE VACÍO
+                    // console.log(this.$route)
+                        this.usuarios = api.data.usuarios
                     }
                 }
                 catch(error){
@@ -68,9 +67,25 @@ export default{
             },
         async callApiTasks(){
             try{
-                const api = await smarteamsApi.get('/api/task/listPtasks', {headers: {'x-token': localStorage.getItem('token')}})
+                const api = await smarteamsApi.get('/api/task/listPtasks/'+ this.$route.params.id ,{headers: {'x-token': localStorage.getItem('token')}})
                 if (api.status == 200){
+                    console.log(api.data)
                         this.tasks = api.data.tasks
+                    }
+                }
+                catch(error){
+                    console.log(error)
+                }
+        },
+        async callApiInfo(){
+            try{
+                const api = await smarteamsApi.get('/api/equipos/show/'+ this.$route.params.id, {headers: {'x-token': localStorage.getItem('token')}})
+                if (api.status == 200){
+                        this.title = api.data.equipos.title
+                        var a = api.data.equipos.deadline
+                        this.deadline = a.split("T", 1)[0]
+                        this.desc = api.data.equipos.description
+                        // console.log(api)
                     }
                 }
                 catch(error){
@@ -78,9 +93,15 @@ export default{
                 }
         }
     },
+    computed: {
+        pid(){
+            return this.$route.params.id
+        }
+    },
     mounted(){
         this.callApi()
         this.callApiTasks()
+        this.callApiInfo()
     }
 }
 </script>

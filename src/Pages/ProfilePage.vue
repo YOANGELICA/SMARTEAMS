@@ -9,7 +9,7 @@
             <RouterView />
             <div style="height:40px;"></div>
             <h2> Mis proyectos </h2>
-            <UserProject v-for="proyecto in proyectos" :projectname="proyecto.equipo.title"/>
+            <UserProject v-for="proyecto in proyectos" :projectname="proyecto.equipo.title" :pid="proyecto.equipo._id"/>
         
         </div>
         <div class="float-child" >
@@ -20,7 +20,8 @@
             <div style="height:40px;"></div>
             <h2> Mis tareas asignadas </h2>
             <Task v-for="task in tasks" :TaskName="task.title" :deadline="task.deadline"/>
-            <!-- <Task TaskName="Lorem Ipsum sit amet" deadline="dd-mm-yy"/><br/>  -->
+            <!-- <Task TaskName="Investigar antecedentes" deadline="27-11-22"/><br/>  -->
+            <!-- <Task TaskName="Enviar archivo" deadline="07-12-22"/><br/>  -->
 
         </div>
     </div>
@@ -59,7 +60,9 @@ export default{
             user: JSON.parse( localStorage.getItem("user")),
             router: useRouter(),
             proyectos: [],
-            tasks: []
+            tasks: [],
+            title:"",
+            deadline:""
         }
     },
     methods:{
@@ -67,7 +70,7 @@ export default{
             try{
                 const api = await smarteamsApi.get('/api/equipos/list', {headers: {'x-token': localStorage.getItem('token')}})
                 if (api.status == 200){
-                    console.log(api)
+                    // console.log(api)
                         this.proyectos = api.data.equipos
                     }
                 }
@@ -79,12 +82,16 @@ export default{
             try{
                 const api = await smarteamsApi.get('/api/task/list', {headers: {'x-token': localStorage.getItem('token')}})
                 if (api.status == 200){
+                    console.log(api)
                         this.tasks = api.data.tasks
                     }
                 }
                 catch(error){
                     console.log(error)
                 }
+        },
+        splitDeadline(){
+            return this.deadline = this.deadline.split("T", 1)[0]
         }
     },
     mounted(){

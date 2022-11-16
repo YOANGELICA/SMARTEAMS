@@ -18,9 +18,9 @@ const routes = [
     component: () => import('@/Pages/ProfilePage.vue')},
     {path: '/Create',
     component: () => import('@/Pages/CreatePage.vue')},
-    {path: '/Project',
+    {path: '/Project/:id',
     component: () => import('@/Pages/ProjectPage.vue')},
-    {path: '/AddTask',
+    {path: '/AddTask/:id',
     component: () => import('@/Pages/TaskPage.vue')},
     {path: '/:pathMatch(.*)*',
     component: () => import('@/Pages/Page404.vue')}
