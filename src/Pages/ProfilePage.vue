@@ -1,5 +1,4 @@
 <template>
-    <!-- <Menu/> -->
     <h1 style="font-size: 45px; font-weight: 800; color: #000000"> Mi perfil </h1><br/>
     <div class="float-container">
         <div class="float-child">
@@ -10,7 +9,6 @@
             <div style="height:40px;"></div>
             <h2> Mis proyectos </h2>
             <UserProject v-for="proyecto in proyectos" :projectname="proyecto.equipo.title" :pid="proyecto.equipo._id"/>
-        
         </div>
         <div class="float-child" >
             <!-- <Desarrollador/> -->
@@ -20,9 +18,7 @@
             <div style="height:40px;"></div>
             <h2> Mis tareas asignadas </h2>
             <Task v-for="task in tasks" :TaskName="task.title" :deadline="task.deadline"/>
-            <!-- <Task TaskName="Investigar antecedentes" deadline="27-11-22"/><br/>  -->
-            <!-- <Task TaskName="Enviar archivo" deadline="07-12-22"/><br/>  -->
-
+            <br/>
         </div>
     </div>
 </template>
@@ -68,7 +64,9 @@ export default{
     methods:{
         async callApi(){
             try{
-                const api = await smarteamsApi.get('/api/equipos/list', {headers: {'x-token': localStorage.getItem('token')}})
+                const api = await smarteamsApi.get('/api/equipos/list', {headers: {
+                                                                        'x-token': localStorage.getItem('token')}
+                                                                        })
                 if (api.status == 200){
                     // console.log(api)
                         this.proyectos = api.data.equipos
@@ -80,10 +78,13 @@ export default{
             },
         async callApiTasks(){
             try{
-                const api = await smarteamsApi.get('/api/task/list', {headers: {'x-token': localStorage.getItem('token')}})
+                const api = await smarteamsApi.get('/api/task/list', {headers: {
+                                                                     'x-token': localStorage.getItem('token')}
+                                                                    })
                 if (api.status == 200){
                     console.log(api)
                         this.tasks = api.data.tasks
+                        splitDeadline()
                     }
                 }
                 catch(error){
@@ -91,7 +92,7 @@ export default{
                 }
         },
         splitDeadline(){
-            return this.deadline = this.deadline.split("T", 1)[0]
+            return this.deadline.split("T", 1)[0]
         }
     },
     mounted(){

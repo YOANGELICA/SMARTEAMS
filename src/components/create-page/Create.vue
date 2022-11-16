@@ -47,7 +47,7 @@ export default {
                 )
 
                 if (api.status == 200){
-                    this.router.push("/Project")
+                    // this.router.push("/Project")
                 }
             }
             catch(error){

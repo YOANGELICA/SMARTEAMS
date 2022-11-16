@@ -35,9 +35,12 @@ export default {
     methods:{
     async callApi(){
             try{
-                const api = await smarteamsApi.post('/api/task/create/'+this.getId, {title: this.title, user: this.email, deadline: this.deadline}, {headers: {'x-token': localStorage.getItem('token')}})
+                const api = await smarteamsApi.post('/api/task/create/'+this.getId, {title: this.title, 
+                                                                                      user: this.email, 
+                                                                                      deadline: this.deadline
+                                                                                    }, 
+                                                                                    { headers: {'x-token': localStorage.getItem('token')}})
                 if (api.status == 200){
-                  
                 console.log(api, api.status)
               }
             }

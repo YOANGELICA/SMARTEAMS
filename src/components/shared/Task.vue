@@ -6,6 +6,7 @@
             <p> fecha límite: {{deadline}} <br/>  {{taskUser}} </p>
         </label>
     </div>
+    <br/>
     
 </template>
 

@@ -4,16 +4,18 @@
             <img src="@/assets/icon-image.png" style="height: 70px; width:70px">
         </div>
         <div class="left-container" style="width: 75%; height: 100%; float:right; ">
-            <!-- <h2 style=" font-weight: 750; font-size: 25px;"> {{username}}</h2> -->
-            <p to="/Profile" style=" font-weight: 750; font-size: 25px; color:black;"> {{username}} </p>
+            <p to="/Profile" style=" font-weight: 750; font-size: 25px; color:black; margin:0px"> {{username}} </p>
+            <p to="/Profile" style=" font-size: 20px; color:black;"> {{useremail}} </p>
         </div>
     </div>
+    <br/>
 </template>
 
 <script>
     export default {
         props: {
-            "username": String
+            "username": String,
+            "useremail": String
         },
         name: 'TeamUsers',
     }

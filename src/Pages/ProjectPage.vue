@@ -1,14 +1,12 @@
 <template>
     <h1 style="font-size: 45px; font-weight: 800; color: #000000"> {{title}} </h1> <br/>
-
     <div class="float-container">
         <div class="float-child">
             <h2> Descripción </h2>
             <ProjectDesc :desc="desc"/>
             <br/>
             <h2> Integrantes </h2>
-            <TeamUsers v-for="x in usuarios" :username="x.user.name"/>
-
+            <TeamUsers v-for="x in usuarios" :username="x.user.name" :useremail="x.user.email" />
         </div>
         <div class="float-child">
             <h2> Fecha límite: </h2>
@@ -16,13 +14,10 @@
             <router-link :to="'/AddTask/'+pid" id="add-btn"> + Añadir una tarea </router-link><br/>
             <div style="height:40px;"></div>
             <h2> Tareas asignadas </h2>
-            <!-- <Task TaskName="Investigar antecedentes" taskUser="John Smith" deadline="27-11-22"/><br/> -->
-            <!-- <Task TaskName="Redactar introducción" taskUser="Luis Perez" deadline="30-11-22"/><br/> -->
             <Task v-for="task in tasks" :TaskName="task.title" :taskUser="task.user?.name" :deadline="task.deadline"/>
         </div>
     </div>
     <RouterView/>
-
 </template>
 
 <script>
@@ -55,10 +50,15 @@ export default{
     methods:{
         async callApi(){
             try{
-                const api = await smarteamsApi.get('/api/equipos/listUsers/'+ this.$route.params.id, {headers: {'x-token': localStorage.getItem('token')}})
+                const api = await smarteamsApi.get('/api/equipos/listUsers/'+ this.$route.params.id, 
+                                                    {headers: {
+                                                        'x-token': localStorage.getItem('token')
+                                                        }
+                                                    })
                 if (api.status == 200){
                     // console.log(this.$route)
                         this.usuarios = api.data.usuarios
+                        console.log(api)
                     }
                 }
                 catch(error){
@@ -67,7 +67,11 @@ export default{
             },
         async callApiTasks(){
             try{
-                const api = await smarteamsApi.get('/api/task/listPtasks/'+ this.$route.params.id ,{headers: {'x-token': localStorage.getItem('token')}})
+                const api = await smarteamsApi.get('/api/task/listPtasks/'+ this.$route.params.id,
+                                                    {headers: {
+                                                        'x-token': localStorage.getItem('token')
+                                                        }
+                                                    })
                 if (api.status == 200){
                     console.log(api.data)
                         this.tasks = api.data.tasks
@@ -79,7 +83,11 @@ export default{
         },
         async callApiInfo(){
             try{
-                const api = await smarteamsApi.get('/api/equipos/show/'+ this.$route.params.id, {headers: {'x-token': localStorage.getItem('token')}})
+                const api = await smarteamsApi.get('/api/equipos/show/'+ this.$route.params.id, 
+                                                    {headers: {
+                                                        'x-token': localStorage.getItem('token')
+                                                        }
+                                                    })
                 if (api.status == 200){
                         this.title = api.data.equipos.title
                         var a = api.data.equipos.deadline
